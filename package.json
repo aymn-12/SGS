@@ -1,0 +1,47 @@
+{
+  "name": "sgs-backend",
+  "version": "1.0.0",
+  "description": "Smart Academic Timetable Scheduling System Core API",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/utils/seeder.js",
+    "seed:massive": "node src/utils/massiveSeeder.js",
+    "test:clashes": "node src/utils/testValidatorClashes.js",
+    "test:notifications": "node src/utils/testNotifications.js",
+    "test:email": "node src/utils/testBrevoEmail.js",
+    "test:faulty": "py solver/test_faulty_scenarios.py",
+    "solver": "py solver/worker.py",
+    "benchmark": "py solver/benchmark_large_dataset.py"
+  },
+  "keywords": [
+    "academic-timetable",
+    "scheduling",
+    "express",
+    "mongodb",
+    "redis"
+  ],
+  "dependencies": {
+    "@getbrevo/brevo": "^6.2.0",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.2",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.7.3",
+    "helmet": "^8.3.0",
+    "hpp": "^0.2.3",
+    "ioredis": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.4",
+    "morgan": "^1.12.1",
+    "socket.io": "^4.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "socket.io-client": "^4.8.4"
+  }
+}
